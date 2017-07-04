@@ -1,15 +1,3 @@
-#!/usr/bin/python
-# -*- coding: utf-8 -*-
-
-# __author__ = 'maximus'
-# __author__ = 'im-kulikov'
-
-import argparse
-import ipaddress
-import json
-import re
-import subprocess
-
 def get_snmpindex(oid, oid_walk):
     re_oid = re.compile('(\.[\d]+)+')
     result_oid = re_oid.search(oid)
@@ -65,6 +53,7 @@ def main():
     out = subprocess.check_output([
         snmpwalk,
         '-Osx',
+        '-On',
         '-c' + args.community,
         '-v' + args.version,
         args.host,
@@ -86,6 +75,7 @@ def main():
         out = subprocess.check_output([
             snmpwalk,
             '-Os',
+            '-On',
             '-c' + args.community,
             '-v' + args.version,
             args.host,
