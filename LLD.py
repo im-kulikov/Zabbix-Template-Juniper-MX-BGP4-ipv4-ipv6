@@ -108,7 +108,7 @@ def main():
                 elem_dict[macro] = all_oid_dict[macro][key]
         json_raw.append(elem_dict.copy())
     json_data = {'data': json_raw}
-    print json.dumps(json_data, sort_keys=True, indent=4)
+    print(json.dumps(json_data, sort_keys=True, indent=4))
 
 
 if __name__ == '__main__':
