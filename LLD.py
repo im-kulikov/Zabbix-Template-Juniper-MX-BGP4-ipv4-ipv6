@@ -1,3 +1,9 @@
+#!/usr/bin/python3
+# -*- coding: utf-8 -*-
+
+# __author__ = 'maximus'
+# __author__ = 'im-kulikov'
+
 def get_snmpindex(oid, oid_walk):
     re_oid = re.compile('(\.[\d]+)+')
     result_oid = re_oid.search(oid)
